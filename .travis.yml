@@ -10,7 +10,7 @@ node_js:
 
 branches:
   only:
-    - develop
+    - master
 
 install:
   - yarn global add codecov
