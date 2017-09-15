@@ -1,19 +1,5 @@
-# React Responsive Table
-Better responsive tables for react! For smaller screens, this library converts a standard html table into a two column table, with the header as the first column and the corresponding data in the second column.
-
-<div style="display: inline-block; padding: 5px;"><strong>Desktop</strong><br><img src="https://i.imgur.com/HN3RbVB.gif" alt="Desktop" style="height: 300px;"/></div>
-<div style="display: inline-block; padding: 5px;"><strong>Mobile</strong><br><img src="https://i.imgur.com/Ra1TJPw.gif" alt="Mobile" style="height: 300px;"/></div>
-<div style="display: inline-block; padding: 5px;"><strong>Transition</strong><br><img src="https://i.imgur.com/LGQhcPb.gif" alt="Transition" style="height: 300px;"/></div>
-
-## Usage
-```shell
-$ npm install --save --save-exact react-responsive-table
-```
-
-```jsx
-// App.js
 import React, { Component } from 'react'
-import ResponsiveTable from 'react-responsive-table'
+import ResponsiveTable from './lib'
 
 class App extends Component {
   render() {
@@ -25,7 +11,7 @@ class App extends Component {
     return (
       <ResponsiveTable
         classes={{
-          table: 'table' // note: using bootstrap css...
+          table: 'table'
         }}
         headers={['Year','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','J-D','D-N','DJF','MAM','JJA','SON']}
         data={[
@@ -167,106 +153,9 @@ class App extends Component {
           [2015,0.81,0.87,0.9,0.74,0.76,0.78,0.71,0.79,0.82,1.07,1.05,1.12,0.87,0.84,0.82,0.8,0.76,0.98],
           [2016,1.18,1.35,1.32,1.09,0.92,0.78,0.82,0.99,0.87,0.89,0.9,0.84,1,1.02,1.22,1.11,0.86,0.89],
           [2017,0.98,1.13,1.14,0.94,0.89,0.68,0.83,'***','***','***','***','***','***','***',0.98,0.99,'***','***']
-        ]}
-      />
+        ]} />
     )
   }
 }
 
 export default App
-```
-
-## Prop Types
-```js
-{
-  // breakpoint: window.innerWidth at which the table switches to the smaller, mobile version
-  breakpoint: PropTypes.number,
-
-  // classes: class strings to apply to the various html elements
-  classes: PropTypes.shape({
-    table: PropTypes.string,
-    thead: PropTypes.string, // note: thead is not present in the smaller, mobile table
-    th: PropTypes.string,
-    tbody: PropTypes.string, // note: tbody encapsulates each 'row of data' in the smaller, mobile table
-    tr: PropTypes.string,
-    td: PropTypes.string,
-    mobileSpacerRow:  PropTypes.shape({
-      tr: PropTypes.string,
-      td: PropTypes.string
-    })
-  }),
-
-  // styles: style objects to apply to the various html elements
-  styles: PropTypes.shape({
-    table: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string,PropTypes.number])),
-    thead: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string,PropTypes.number])), // note: thead is not present in the smaller, mobile table
-    th: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string,PropTypes.number])),
-    tbody: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string,PropTypes.number])), // note: tbody encapsulates each 'row of data' in the smaller, mobile table
-    tr: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string,PropTypes.number])),
-    td: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string,PropTypes.number])),
-    mobileSpacerRow:  PropTypes.shape({
-      tr: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string,PropTypes.number])),
-      td: PropTypes.objectOf(PropTypes.oneOfType([PropTypes.string,PropTypes.number]))
-    })
-  }),
-
-  // headers: array of table headers
-  headers: PropTypes.arrayOf(
-    PropTypes.oneOfType([
-      PropTypes.string,
-      PropTypes.number,
-      PropTypes.bool,
-      PropTypes.symbol
-    ])
-  ),
-
-  // data: array of arrays of table data
-  data: PropTypes.arrayOf(
-    PropTypes.arrayOf(
-      PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.number,
-        PropTypes.bool,
-        PropTypes.symbol
-      ])
-    )
-  ),
-
-  // hasMobileSpacerRow: should the last row in the mobile table be blank to provide some padding?
-  hasMobileSpacerRow: PropTypes.bool
-}
-```
-
-## Default Props
-```js
-{
-  breakpoint: 480, // px
-  classes: {
-    table: '',
-    thead: '',
-    th: '',
-    tbody: '',
-    tr: '',
-    td: '',
-    mobileSpacerRow: {
-      tr: '',
-      td: ''
-    }
-  },
-  styles: {
-    table: {},
-    thead: {},
-    th: {},
-    tbody: {},
-    tr: {},
-    td: {},
-    mobileSpacerRow: {
-      tr: {},
-      td: {}
-    }
-  },
-  headers: [],
-  data: [[]],
-  hasMobileSpacerRow: true
-}
-```
