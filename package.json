@@ -50,6 +50,8 @@
     "test": "node scripts/test.js --env=jsdom"
   },
   "jest": {
+    "coverageDirectory": "./coverage/",
+    "collectCoverage": true,
     "collectCoverageFrom": [
       "src/**/*.{js,jsx}"
     ],
