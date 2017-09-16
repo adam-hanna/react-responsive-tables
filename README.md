@@ -1,4 +1,4 @@
-# React Responsive Table
+# React Responsive Tables
 [![Build Status](https://travis-ci.org/adam-hanna/react-responsive-table.svg?branch=master)](https://travis-ci.org/adam-hanna/react-responsive-table) [![codecov](https://codecov.io/gh/adam-hanna/react-responsive-table/branch/master/graph/badge.svg)](https://codecov.io/gh/adam-hanna/react-responsive-table)
 
 Better responsive tables for react! For smaller screens, this library converts a standard html table into a two column table, with the header as the first column and the corresponding data in the second column.
@@ -11,13 +11,13 @@ Better responsive tables for react! For smaller screens, this library converts a
 
 ## Usage
 ```shell
-$ npm install --save --save-exact react-responsive-table
+$ npm install --save --save-exact react-responsive-tables
 ```
 
 ```jsx
 // App.js
 import React, { Component } from 'react'
-import ResponsiveTable from 'react-responsive-table'
+import ResponsiveTables from 'react-responsive-tables'
 
 class App extends Component {
   render() {
@@ -27,7 +27,7 @@ class App extends Component {
       Global-mean monthly, seasonal, and annual means, 1880-present
     */
     return (
-      <ResponsiveTable
+      <ResponsiveTables
         classes={{
           table: 'table' // note: using bootstrap css...
         }}

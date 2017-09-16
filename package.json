@@ -1,11 +1,11 @@
 {
-  "name": "react-responsive-table",
+  "name": "react-responsive-tables",
   "version": "0.0.1",
   "main": "lib/index.js",
   "private": false,
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/adam-hanna/react-responsive-table.git"
+    "url": "git+https://github.com/adam-hanna/react-responsive-tables.git"
   },
   "keywords": [
     "react",
@@ -15,9 +15,9 @@
   "author": "Adam Hanna",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/adam-hanna/react-responsive-table/issues"
+    "url": "https://github.com/adam-hanna/react-responsive-tables/issues"
   },
-  "homepage": "https://github.com/adam-hanna/react-responsive-table#readme",
+  "homepage": "https://github.com/adam-hanna/react-responsive-tables#readme",
   "dependencies": {
     "autoprefixer": "7.1.2",
     "babel-core": "6.25.0",
