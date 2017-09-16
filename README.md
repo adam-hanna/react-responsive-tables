@@ -1,5 +1,5 @@
 # React Responsive Tables
-[![Build Status](https://travis-ci.org/adam-hanna/react-responsive-table.svg?branch=master)](https://travis-ci.org/adam-hanna/react-responsive-table) [![codecov](https://codecov.io/gh/adam-hanna/react-responsive-table/branch/master/graph/badge.svg)](https://codecov.io/gh/adam-hanna/react-responsive-table)
+[![Build Status](https://travis-ci.org/adam-hanna/react-responsive-table.svg?branch=master)](https://travis-ci.org/adam-hanna/react-responsive-table) [![codecov](https://codecov.io/gh/adam-hanna/react-responsive-tables/branch/master/graph/badge.svg)](https://codecov.io/gh/adam-hanna/react-responsive-tables)
 
 Better responsive tables for react! For smaller screens, this library converts a standard html table into a two column table, with the header as the first column and the corresponding data in the second column.
 
