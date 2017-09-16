@@ -17,4 +17,4 @@ install:
   - yarn install
 
 script:
-  - yarn test && codecov
+  - yarn test --collectCoverageFrom=src/lib/**/*.js && codecov
