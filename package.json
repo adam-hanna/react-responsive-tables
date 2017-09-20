@@ -1,6 +1,6 @@
 {
   "name": "react-responsive-tables",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "main": "lib/index.js",
   "private": false,
   "repository": {
