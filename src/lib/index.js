@@ -31,7 +31,11 @@ class ResponsiveTable extends Component {
 
   componentDidMount() {
     this.setState({windowWidth: window.innerWidth})
-    window.onresize = this.resizeFunc
+    window.addEventListener('resize', this.resizeFunc)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('resize', this.resizeFunc)
   }
 
   render() {
