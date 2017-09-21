@@ -83,7 +83,8 @@ export const DEFAULT_PROPTYPES = {
         PropTypes.string,
         PropTypes.number,
         PropTypes.bool,
-        PropTypes.symbol
+        PropTypes.symbol,
+        PropTypes.element
       ])
     )
   ),

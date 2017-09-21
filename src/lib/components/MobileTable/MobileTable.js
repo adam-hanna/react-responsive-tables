@@ -29,6 +29,7 @@ class MobileTable extends Component {
               style={this.state.styles.tbody}
             >
               {this.props.headers.map((header, idx2) => {
+                let item = idx2 < datum.length ? datum[idx2] : ''
                 return (
                   <tr
                     key={idx2}
@@ -41,21 +42,12 @@ class MobileTable extends Component {
                     >
                       {header}
                     </th>
-                    {idx2 <= datum.length - 1 ? (
-                      <td
-                        className={this.state.classes.td}
-                        style={this.state.styles.td}
-                      >
-                        {datum[idx2]}
-                      </td>
-                    ) : (
-                      <td
-                        className={this.state.classes.td}
-                        style={this.state.styles.td}
-                      >
-                        {''}
-                      </td>
-                    )}
+                    <td
+                      className={this.state.classes.td}
+                      style={this.state.styles.td}
+                    >
+                      {item}
+                    </td>
                   </tr>
                 )
               })}

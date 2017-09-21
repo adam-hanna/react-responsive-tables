@@ -17,7 +17,11 @@ $ npm install --save --save-exact react-responsive-tables
 ```jsx
 // App.js
 import React, { Component } from 'react'
-import ResponsiveTables from 'react-responsive-tables'
+import ResponsiveTable from './lib'
+
+const Input = () => (
+  <span>Test Elem</span>
+)
 
 class App extends Component {
   render() {
@@ -27,12 +31,13 @@ class App extends Component {
       Global-mean monthly, seasonal, and annual means, 1880-present
     */
     return (
-      <ResponsiveTables
+      <ResponsiveTable
         classes={{
-          table: 'table' // note: using bootstrap css...
+          table: 'table'
         }}
         headers={['Year','Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec','J-D','D-N','DJF','MAM','JJA','SON']}
         data={[
+          [<Input key={1} />,<Input key={2} />,<Input key={3} />,<Input key={4} />,<Input key={5} />,<Input key={6} />,<Input key={7} />,<Input key={8} />,<Input key={9} />,<Input key={10} />,<Input key={11} />,<Input key={12} />,<Input key={13} />,<Input key={14} />,<Input key={15} />,<Input key={16} />,<Input key={17} />,<Input key={18} />,<Input key={19} />],
           [1880,-0.3,-0.19,-0.12,-0.2,-0.12,-0.24,-0.22,-0.1,-0.17,-0.25,-0.21,-0.24,-0.2,'***','***',-0.15,-0.19,-0.21],
           [1881,-0.16,-0.18,0.03,0.03,0.01,-0.21,-0.07,-0.03,-0.14,-0.22,-0.23,-0.12,-0.11,-0.12,-0.19,0.02,-0.1,-0.2],
           [1882,0.14,0.14,0.03,-0.19,-0.17,-0.27,-0.21,-0.06,-0.11,-0.26,-0.17,-0.25,-0.12,-0.1,0.05,-0.11,-0.18,-0.18],
@@ -171,8 +176,7 @@ class App extends Component {
           [2015,0.81,0.87,0.9,0.74,0.76,0.78,0.71,0.79,0.82,1.07,1.05,1.12,0.87,0.84,0.82,0.8,0.76,0.98],
           [2016,1.18,1.35,1.32,1.09,0.92,0.78,0.82,0.99,0.87,0.89,0.9,0.84,1,1.02,1.22,1.11,0.86,0.89],
           [2017,0.98,1.13,1.14,0.94,0.89,0.68,0.83,'***','***','***','***','***','***','***',0.98,0.99,'***','***']
-        ]}
-      />
+        ]} />
     )
   }
 }
