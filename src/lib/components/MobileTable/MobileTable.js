@@ -1,8 +1,29 @@
 import React, { Component } from 'react'
-import {
-  DEFAULT_PROPS,
-  DEFAULT_PROPTYPES
-} from '../../utils/Defaults'
+import { DEFAULT_PROPS, DEFAULT_PROPTYPES } from '../../utils/Defaults'
+
+export const checkItem = (one, two) => {
+  return one < two.length ? two[one] : ''
+}
+
+export const hasMobileSpacerRow = (properties, componentStates) => {
+  return properties.hasMobileSpacerRow ? (
+    <tr
+      className={componentStates.classes.mobileSpacerRow.tr}
+      style={componentStates.styles.mobileSpacerRow.tr}
+    >
+      <td
+        className={componentStates.classes.mobileSpacerRow.td}
+        style={componentStates.styles.mobileSpacerRow.td}
+      />
+      <td
+        className={componentStates.classes.mobileSpacerRow.td}
+        style={componentStates.styles.mobileSpacerRow.td}
+      />
+    </tr>
+  ) : (
+    ''
+  )
+}
 
 class MobileTable extends Component {
   constructor(props) {
@@ -14,7 +35,7 @@ class MobileTable extends Component {
       styles: window.Object.assign({}, DEFAULT_PROPS.styles, props.styles)
     }
   }
-  
+
   render() {
     return (
       <table
@@ -29,7 +50,7 @@ class MobileTable extends Component {
               style={this.state.styles.tbody}
             >
               {this.props.headers.map((header, idx2) => {
-                let item = idx2 < datum.length ? datum[idx2] : ''
+                let item = checkItem(idx2, datum)
                 return (
                   <tr
                     key={idx2}
@@ -51,23 +72,7 @@ class MobileTable extends Component {
                   </tr>
                 )
               })}
-              {this.props.hasMobileSpacerRow ? (
-                <tr
-                  className={this.state.classes.mobileSpacerRow.tr}
-                  style={this.state.styles.mobileSpacerRow.tr}
-                >
-                  <td
-                    className={this.state.classes.mobileSpacerRow.td}
-                    style={this.state.styles.mobileSpacerRow.td}
-                  ></td>
-                  <td
-                    className={this.state.classes.mobileSpacerRow.td}
-                    style={this.state.styles.mobileSpacerRow.td}
-                  ></td>
-                </tr>
-              ) : (
-                ''
-              )}
+              {hasMobileSpacerRow(this.props, this.state)}
             </tbody>
           )
         })}
